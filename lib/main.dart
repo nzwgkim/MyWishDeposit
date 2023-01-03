@@ -108,47 +108,61 @@ class WebtoonApp extends StatelessWidget {
                 height: 20,
               ),
               Container(
+                clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
                   color: const Color(0xff1f2123),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                child: Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Euro',
-                          style: TextStyle(
-                              fontSize: 32,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        const SizedBox(height: 10),
-                        Row(
-                          children: [
-                            const Text(
-                              '6 428',
-                              style: TextStyle(
-                                fontSize: 25,
+                child: Padding(
+                  padding: const EdgeInsets.all(30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Euro',
+                            style: TextStyle(
+                                fontSize: 32,
                                 color: Colors.white,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          const SizedBox(height: 5),
+                          Row(
+                            children: [
+                              const Text(
+                                '6 428',
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Colors.white,
+                                ),
                               ),
-                            ),
-                            const SizedBox(
-                              width: 20,
-                            ),
-                            Text(
-                              'EUR',
-                              style: TextStyle(
-                                  color: Colors.white.withOpacity(0.8)),
-                            ),
-                          ],
+                              const SizedBox(
+                                width: 20,
+                              ),
+                              Text(
+                                'EUR',
+                                style: TextStyle(
+                                    color: Colors.white.withOpacity(0.8)),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Transform.scale(
+                        scale: 2.2,
+                        child: Transform.translate(
+                          offset: const Offset(10, 20),
+                          child: const Icon(
+                            Icons.euro_rounded,
+                            color: Colors.white,
+                            size: 100,
+                          ),
                         ),
-                      ],
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],
