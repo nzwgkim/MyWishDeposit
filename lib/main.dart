@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toonflix/widget/button.dart';
 
 void main() {
   runApp(const WebtoonApp());
@@ -11,12 +12,13 @@ class WebtoonApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color(0xff181818),
+        backgroundColor: const Color(0xff181818),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 80,
               ),
               Row(
@@ -25,8 +27,8 @@ class WebtoonApp extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text(
-                        "Hey, Selena",
+                      const Text(
+                        "Hey, Woody",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 28,
@@ -40,7 +42,115 @@ class WebtoonApp extends StatelessWidget {
                     ],
                   )
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 120,
+              ),
+              Text(
+                'Total balance',
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.white.withOpacity(0.8),
+                ),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              const Text(
+                '\$5 194 482',
+                style: TextStyle(
+                  fontSize: 48,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Button(
+                      text: 'Transfer',
+                      bgColor: Colors.amber,
+                      textColor: Colors.black),
+                  Button(
+                      text: 'Request',
+                      bgColor: Color(0xff1f2123),
+                      textColor: Colors.white)
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  const Text(
+                    "Wallets",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 32,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Text(
+                    "View All",
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.5),
+                      fontSize: 18,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xff1f2123),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                child: Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Euro',
+                          style: TextStyle(
+                              fontSize: 32,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          children: [
+                            const Text(
+                              '6 428',
+                              style: TextStyle(
+                                fontSize: 25,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Text(
+                              'EUR',
+                              style: TextStyle(
+                                  color: Colors.white.withOpacity(0.8)),
+                            ),
+                          ],
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),
